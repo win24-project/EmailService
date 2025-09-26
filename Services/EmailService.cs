@@ -11,8 +11,9 @@ public class EmailService : IEmailService
 
     public EmailService(IConfiguration config)
     {
-        var connectionString = config["AcsEmailConnectionString"];
-        _sender = config["AcsSenderAddress"] ?? throw new Exception("Sender address not configured");
+        var connectionString = config["ACSConnectionString-GroupProject"];
+        _sender = config["ACSSenderAddress"] ?? throw new Exception("Sender address not configured");
+
 
         if (string.IsNullOrEmpty(connectionString))
             throw new Exception("ACS Email connection string not configured");
