@@ -12,7 +12,7 @@ public class EmailService : IEmailService
     public EmailService(IConfiguration config)
     {
         var connectionString = config["ACSConnectionString-GroupProject"];
-        _sender = config["ACSSenderAddress"] ?? throw new Exception("Sender address not configured");
+        _sender = config["ACSEmailFromAddress"] ?? throw new Exception("Sender address not configured");
 
 
         if (string.IsNullOrEmpty(connectionString))
