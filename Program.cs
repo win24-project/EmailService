@@ -4,10 +4,10 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Configuration.AddAzureKeyVault(
-//    new Uri("https://group-project-keyvault.vault.azure.net/"),
-//    new DefaultAzureCredential()
-//);
+builder.Configuration.AddAzureKeyVault(
+    new Uri("https://group-project-keyvault.vault.azure.net/"),
+    new DefaultAzureCredential()
+);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
