@@ -34,7 +34,7 @@ public class EmailService : IEmailService
             },
             recipients: new EmailRecipients(recipients)
         );
-        var op = await _client.SendAsync(Azure.WaitUntil.Completed, email);
+        var op = await _client.SendAsync(Azure.WaitUntil.Started, email);
         return op.Value.Status.ToString();
     }
 }
